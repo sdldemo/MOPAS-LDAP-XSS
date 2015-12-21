@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 
@@ -24,6 +24,9 @@ namespace Mopas.Tests
             var domain = Domain.GetDomain(dc);
 
             // this is our vulnerabilitiy of LDAP injection *in this file*
+            // TODO: AI issue #1, High, LDAP Injection, https://github.com/sdldemo/MOPAS-LDAP-XSS/issues/1
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx?address=%7bfilter%7d+%3d+* HTTP/1.1
+            // Host:localhost
             var ds = new DirectorySearcher(domain.GetDirectoryEntry(), filter);
 
             using (var src = ds.FindAll())
