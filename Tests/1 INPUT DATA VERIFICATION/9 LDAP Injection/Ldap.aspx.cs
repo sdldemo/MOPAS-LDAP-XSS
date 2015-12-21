@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 
@@ -37,18 +37,34 @@ namespace Mopas.Tests
 
             // this is our first vulnerability of XSS in this file
             // we will demonstrate False Positive scenario here (FP Marker)
+            // TODO: AI issue #2, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS-LDAP-XSS/issues/2
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx HTTP/1.1
+            // Host:localhost
+            // (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().MoveNext() && (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().Current.ToString() == "<script>alert(0)</script>"))
             Response.Write(result);
 
             // this is our second vulnerability of XSS in this file
             // we will demonstrate what happen if developer fails with his fix (VERIFY Marker)
+            // TODO: AI issue #2, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS-LDAP-XSS/issues/2
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx HTTP/1.1
+            // Host:localhost
+            // (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().MoveNext() && (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().Current.ToString() == "<script>alert(0)</script>"))
             Response.Write(result);
 
             // this is our third vulnerability of XSS in this file
             // we will demonstrate what happen if we really fix vulnerability (VERIFY Marker)
+            // TODO: AI issue #2, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS-LDAP-XSS/issues/2
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx HTTP/1.1
+            // Host:localhost
+            // (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().MoveNext() && (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().Current.ToString() == "<script>alert(0)</script>"))
             Response.Write(result);
 
             // this is our fourth vulnerability of XSS in this file
             // we will demonstrate what happen if developer want to cheat (FIXED Marker)
+            // TODO: AI issue #2, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS-LDAP-XSS/issues/2
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx HTTP/1.1
+            // Host:localhost
+            // (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().MoveNext() && (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().Current.ToString() == "<script>alert(0)</script>"))
             Response.Write(result);
         }
     }
